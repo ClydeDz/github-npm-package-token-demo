@@ -1,0 +1,20 @@
+{
+  "name": "@clydedz/demo-fuschia-pomeranian",
+  "version": "0.0.1",
+  "description": "demo-fuschia-pomeranian is a demo npm package",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "files": [
+    "dist/**/*.js",
+    "dist/**/*.d.ts"
+  ],
+  "keywords": [],
+  "author": "clyde d'souza",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}
