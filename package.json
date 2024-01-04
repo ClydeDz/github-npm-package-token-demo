@@ -1,6 +1,6 @@
 {
   "name": "@clydedz/demo-fuschia-pomeranian",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "demo-fuschia-pomeranian is a demo npm package",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
