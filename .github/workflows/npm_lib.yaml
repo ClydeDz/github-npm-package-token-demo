@@ -14,13 +14,12 @@ on:
       - README.md
       - 'consumer/**'
 
-permissions:
-  packages: write
-
 jobs:
   build_publish:
     name: Build and publish npm package
     runs-on: ubuntu-latest
+    permissions:
+      packages: write
 
     steps:
       - name: Checkout code
