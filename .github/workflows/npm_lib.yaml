@@ -1,0 +1,42 @@
+name: 'Build and publish npm package'
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - README.md
+      - 'consumer/**'
+  pull_request:
+    branches:
+      - main
+    paths-ignore:
+      - README.md
+      - 'consumer/**'
+
+jobs:
+  build_publish:
+    name: Build and publish npm package
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 20.x
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build package
+        run: npm run build
+
+      - name: Publish package to GitHub
+        id: publishgithub
+        uses: JS-DevTools/npm-publish@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          registry: 'https://npm.pkg.github.com'
